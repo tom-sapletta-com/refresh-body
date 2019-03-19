@@ -3,3 +3,8 @@ Example, how to refresh body content on webpage every 200 milisecond, alternativ
 
 ## Mouse position
 https://nerdparadise.com/programming/javascriptmouseposition
+
+
+## web
+http://localhost/body.html
+http://localhost/hello

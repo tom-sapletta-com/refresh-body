@@ -6,22 +6,35 @@
 
     <title>Example | refresh every 200ms</title>
 </head>
+<body>
+
+<div class="header">
+    header
+</div>
+
+<div class="content">
+    <h6 class="small">Time on server in ms: </h6>
+</div>
+
+<div id="objectBox" style="margin:30px; text-align:center; width:400px; height:200px; background-color:#ccc;">
+    <div id="objectCoords" style="font-size:36px;"></div>
+</div>
+
+<div class="footer">
+    footer
+</div>
 
 
 <script type="text/javascript">
     // refresh only 2thd sections on website
-
-    // window.onload = setupRefresh;
-
-    // function setupRefresh() {
-    //     setTimeout("refreshPage();", 1000); // milliseconds
-    // }
+    var myVar;
+    myVar = setInterval(refreshPage, 200); // milliseconds
 
     function refreshPage() {
-
-        var url = location.href;
+        // var url = location.href;
+        var url = "/hello";
         url += ' .content';
-        $("body").load(url);
+        $('.content').load(url);
     }
 
 
@@ -53,27 +66,6 @@
     document.getElementById("objectBox").onmousemove = findObjectCoords;
 </script>
 
-<body>
-
-
-<div class="header">
-    header
-</div>
-
-<div class="content">
-
-    <h6 class="small">Opis modyfikacji z dnia 15.03</h6>
-
-</div>
-
-
-<div id="objectBox" style="margin:30px; text-align:center; width:400px; height:200px; background-color:#ccc;">
-    <div id="objectCoords" style="font-size:36px;">249, 107</div>
-</div>
-
-<div class="footer">
-    footer
-</div>
 
 </body>
 </html>

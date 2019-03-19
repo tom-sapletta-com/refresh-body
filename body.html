@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <title>Example | refresh every 200ms</title>
+</head>
+
+
+<script type="text/javascript">
+    // refresh only 2thd sections on website
+
+    // window.onload = setupRefresh;
+
+    // function setupRefresh() {
+    //     setTimeout("refreshPage();", 1000); // milliseconds
+    // }
+
+    function refreshPage() {
+
+        var url = location.href;
+        url += ' .content';
+        $("body").load(url);
+    }
+
+
+    function findObjectCoords(mouseEvent) {
+        var obj = document.getElementById("objectBox");
+        var obj_left = 0;
+        var obj_top = 0;
+        var xpos;
+        var ypos;
+        while (obj.offsetParent) {
+            obj_left += obj.offsetLeft;
+            obj_top += obj.offsetTop;
+            obj = obj.offsetParent;
+        }
+        if (mouseEvent) {
+            //FireFox
+            xpos = mouseEvent.pageX;
+            ypos = mouseEvent.pageY;
+        } else {
+            //IE
+            xpos = window.event.x + document.body.scrollLeft - 2;
+            ypos = window.event.y + document.body.scrollTop - 2;
+        }
+        xpos -= obj_left;
+        ypos -= obj_top;
+        document.getElementById("objectCoords").innerHTML = xpos + ", " + ypos;
+    }
+
+    document.getElementById("objectBox").onmousemove = findObjectCoords;
+</script>
+
+<body>
+
+
+<div class="header">
+    header
+</div>
+
+<div class="content">
+
+    <h6 class="small">Opis modyfikacji z dnia 15.03</h6>
+
+</div>
+
+
+<div id="objectBox" style="margin:30px; text-align:center; width:400px; height:200px; background-color:#ccc;">
+    <div id="objectCoords" style="font-size:36px;">249, 107</div>
+</div>
+
+<div class="footer">
+    footer
+</div>
+
+</body>
+</html>

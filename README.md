@@ -4,6 +4,17 @@ Example, how to refresh body content on webpage every 200 milisecond, alternativ
 ## Mouse position
 https://nerdparadise.com/programming/javascriptmouseposition
 
+## Install server express
+
+express.bat
+
+        ::# Express
+        npm install express
+        ::# pug templates
+        npm install pug --save
+
+## Start server express
+node express.js
 
 ## web
 http://localhost/body.html

@@ -14,8 +14,10 @@ express.bat
         npm install pug --save
 
 ## Start server express
-node express.js
+
+    node express.js
 
 ## web
-http://localhost/body.html
-http://localhost/hello
+
+    http://localhost/body.html
+    http://localhost/hello
